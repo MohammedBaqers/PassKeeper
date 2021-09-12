@@ -205,20 +205,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             onPressed: () async {
               FocusScope.of(context).unfocus();
-              if(show){
-              _getAuth('show');
-
-              }else{
-                  setState(() {
-            if (!show) {
-              hieght = 0;
-              show = !show;
-            } else {
-              hieght = 200;
-              show = !show;
-            }
-          });
-
+              if (show) {
+                _getAuth('show');
+              } else {
+                setState(() {
+                  if (!show) {
+                    hieght = 0;
+                    show = !show;
+                  } else {
+                    hieght = 200;
+                    show = !show;
+                  }
+                });
               }
             },
           ),
@@ -327,7 +325,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DataColumn(
                         label: Text(
                           'Email',
-                          style: GoogleFonts.pacifico(
+                          style: GoogleFonts.cairo(
                               fontSize: 14, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
@@ -335,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       DataColumn(
                           label: Text(
                         'Pass',
-                        style: GoogleFonts.pacifico(
+                        style: GoogleFonts.cairo(
                             fontSize: 14, color: Colors.white),
                         textAlign: TextAlign.center,
                       )),
@@ -378,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new GestureDetector(
       child: new Text(
         text,
-        style: GoogleFonts.pacifico(fontSize: 16, color: Colors.black),
+        style: GoogleFonts.cairo(fontSize: 16, color: Colors.black),
         textAlign: TextAlign.center,
       ),
       onTap: () {
